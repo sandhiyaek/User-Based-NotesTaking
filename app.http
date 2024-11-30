@@ -1,0 +1,47 @@
+@baseUrl = http://localhost:3000
+
+### Register User
+POST {{baseUrl}}/register
+Content-Type: application/json
+
+{
+    "username": "",
+    "password": "121"
+}
+
+### Login User
+POST {{baseUrl}}/login
+Content-Type: application/json
+
+{
+    "username": "sandhiya",
+    "password": "ek"
+}
+
+### Add Note (replace {{token}} with your JWT token from the login response)
+POST {{baseUrl}}/notes
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTczMjk1ODkwOCwiZXhwIjoxNzMyOTYyNTA4fQ.3wgiYr4QX1qUVnG4bitL2XgKCWOAU74z0DpQYSJONw4
+
+{
+    "title": "My Second Note",
+    "content": "This is the content of my second note."
+}
+
+### Get All Notes (replace {{token}} with your JWT token)
+GET {{baseUrl}}/notes
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTczMjk1ODkwOCwiZXhwIjoxNzMyOTYyNTA4fQ.3wgiYr4QX1qUVnG4bitL2XgKCWOAU74z0DpQYSJONw4
+
+### Update Note (replace {{token}} and note ID in the URL)
+PUT {{baseUrl}}/notes/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTczMjk1ODkwOCwiZXhwIjoxNzMyOTYyNTA4fQ.3wgiYr4QX1qUVnG4bitL2XgKCWOAU74z0DpQYSJONw4
+
+{
+    "title": "Updated First Note Title",
+    "content": "Updated content for this note."
+}
+
+### Delete Note (replace {{token}} and note ID in the URL)
+DELETE {{baseUrl}}/notes/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTczMjk1ODkwOCwiZXhwIjoxNzMyOTYyNTA4fQ.3wgiYr4QX1qUVnG4bitL2XgKCWOAU74z0DpQYSJONw4
