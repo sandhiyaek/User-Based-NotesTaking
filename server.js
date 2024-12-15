@@ -36,6 +36,7 @@ db.serialize(() => {
       title TEXT,
       content TEXT,
       created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+      updated_at DATETIME DEFAULT CURRENT_TIMESTAMP,
       FOREIGN KEY(user_id) REFERENCES users(id)
     )
   `);
@@ -117,8 +118,8 @@ app.put("/notes/:id", authenticate, (req, res) => {
   const { title, content } = req.body;
 
   db.run(
-    "UPDATE notes SET title = ?, content = ? WHERE id = ? AND user_id = ?",
-    [title, content, id, req.userId],
+    "UPDATE notes SET title = ?, content = ?,updated_at=? WHERE id = ? AND user_id = ?",
+    [title, content,new Date(), id, req.userId],
     function (err) {
       if (err) return res.status(500).json({ error: "Database error" });
       if (this.changes === 0) return res.status(404).json({ error: "Note not found" });

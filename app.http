@@ -5,8 +5,8 @@ POST {{baseUrl}}/register
 Content-Type: application/json
 
 {
-    "username": "",
-    "password": "121"
+    "username": "sandhiya",
+    "password": "123"
 }
 
 ### Login User
@@ -15,27 +15,27 @@ Content-Type: application/json
 
 {
     "username": "sandhiya",
-    "password": "ek"
+    "password": "123"
 }
 
 ### Add Note (replace {{token}} with your JWT token from the login response)
 POST {{baseUrl}}/notes
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTczMjk1ODkwOCwiZXhwIjoxNzMyOTYyNTA4fQ.3wgiYr4QX1qUVnG4bitL2XgKCWOAU74z0DpQYSJONw4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTczNDI3NDE0MywiZXhwIjoxNzM0Mjc3NzQzfQ.aYtRhBDqZei_MkUfn0Rw8EVF5RxtLfLsgpUQXwX26Nw
 
 {
-    "title": "My Second Note",
-    "content": "This is the content of my second note."
+    "title": "My First Note",
+    "content": "This is the content of my First note."
 }
 
 ### Get All Notes (replace {{token}} with your JWT token)
 GET {{baseUrl}}/notes
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTczMjk1ODkwOCwiZXhwIjoxNzMyOTYyNTA4fQ.3wgiYr4QX1qUVnG4bitL2XgKCWOAU74z0DpQYSJONw4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTczNDI3NDE0MywiZXhwIjoxNzM0Mjc3NzQzfQ.aYtRhBDqZei_MkUfn0Rw8EVF5RxtLfLsgpUQXwX26Nw
 
 ### Update Note (replace {{token}} and note ID in the URL)
-PUT {{baseUrl}}/notes/1
+PUT {{baseUrl}}/notes/6
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTczMjk1ODkwOCwiZXhwIjoxNzMyOTYyNTA4fQ.3wgiYr4QX1qUVnG4bitL2XgKCWOAU74z0DpQYSJONw4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTczNDI3NDE0MywiZXhwIjoxNzM0Mjc3NzQzfQ.aYtRhBDqZei_MkUfn0Rw8EVF5RxtLfLsgpUQXwX26Nw
 
 {
     "title": "Updated First Note Title",
@@ -44,4 +44,4 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhd
 
 ### Delete Note (replace {{token}} and note ID in the URL)
 DELETE {{baseUrl}}/notes/1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTczMjk1ODkwOCwiZXhwIjoxNzMyOTYyNTA4fQ.3wgiYr4QX1qUVnG4bitL2XgKCWOAU74z0DpQYSJONw4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTczNDI3NDE0MywiZXhwIjoxNzM0Mjc3NzQzfQ.aYtRhBDqZei_MkUfn0Rw8EVF5RxtLfLsgpUQXwX26Nw
